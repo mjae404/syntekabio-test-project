@@ -29,6 +29,7 @@ const Gnb: React.FC<GnbProps> = ({ menu, mobileMenu }) => {
   const [isMobile, setIsMobile] = useState(false);
   const [isActive, setIsActive] = useState(false);
 
+  // 화면 크기 감지
   useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 992px)');
 
@@ -44,13 +45,20 @@ const Gnb: React.FC<GnbProps> = ({ menu, mobileMenu }) => {
     };
   }, []);
 
+  // isMobile 변경 시 active 제거
+  useEffect(() => {
+    if (isMobile) {
+      setIsActive(false);
+    }
+  }, [isMobile]);
+
+  // 스크롤 이벤트
   useEffect(() => {
     const handleScroll = () => {
       if (isMobile) {
         setIsActive(false);
         return;
       }
-
       setIsActive(window.scrollY > 0);
     };
 
@@ -58,6 +66,7 @@ const Gnb: React.FC<GnbProps> = ({ menu, mobileMenu }) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobile]);
 
+  // 모바일 메뉴 열기 시 body 스크롤 잠금
   useEffect(() => {
     if (open) {
       document.body.style.overflow = 'hidden';
@@ -93,7 +102,9 @@ const Gnb: React.FC<GnbProps> = ({ menu, mobileMenu }) => {
               ))}
             </ul>
             <LanguageDropdown />
-            <Button size="md" color="primary" type="button">Login</Button>
+            <Button size="md" color="primary" type="button">
+              Login
+            </Button>
           </>
         )}
 
@@ -146,7 +157,9 @@ const Gnb: React.FC<GnbProps> = ({ menu, mobileMenu }) => {
                   </ul>
                   <LanguageDropdown />
                   <div className={styles['gnb-mobile-footer']}>
-                    <Button size="md" block={true} color="primary" type="button">Login</Button>
+                    <Button size="md" block={true} color="primary" type="button">
+                      Login
+                    </Button>
                   </div>
                 </div>
               </div>
