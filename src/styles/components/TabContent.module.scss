@@ -1,0 +1,11 @@
+.tab-image {
+  width: 100%;
+
+  @media screen and (min-width: 892px) {
+    max-width: 892px;
+  }
+
+  &-container {
+    text-align: center;
+  }
+}

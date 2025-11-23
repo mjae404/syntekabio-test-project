@@ -1,0 +1,36 @@
+.button {
+  border-radius: 60px;
+  color: var(--white);
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+
+  $xs: (xs, 6px 10px);
+  $sm: (sm, 10px 15px);
+  $md: (md, 15px);
+  $lg: (lg, 20px);
+
+  @each $size, $padding in $xs, $sm, $md, $lg {
+    &.#{$size} {
+      padding: $padding;
+    }
+  }
+
+  $primary: (primary, var(--primaryGreen));
+  $secondary: (secondary, var(--gray));
+
+  @each $color, $hexColor in $primary, $secondary {
+    &.#{$color} {
+      background-color: $hexColor;
+    }
+  }
+
+  &.block {
+    display: block;
+    width: 100%;
+  }
+
+  &:disabled {
+    background-color: var(--disabled);
+  }
+}

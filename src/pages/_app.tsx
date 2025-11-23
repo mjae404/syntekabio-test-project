@@ -1,4 +1,5 @@
 import type { AppProps } from 'next/app';
+import '../styles/styles.scss';
 
 type AppPropsWithExtra = AppProps & {
   pageProps: AppProps['pageProps'] & { isMobile?: boolean };

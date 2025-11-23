@@ -1,0 +1,56 @@
+.title {
+  &-container {
+    text-align: center;
+    margin-bottom: 25px;
+
+    @media screen and (min-width: 430px) {
+      margin-bottom: 50px;
+    }
+
+    &.green {
+      color: var(--primaryGreen);
+    }
+  }
+
+  &-decoration-text {
+    display: inline-block;
+    font-size: 12px;
+    border-radius: 50px;
+    background-color: var(--lightGreen);
+    font-weight: bold;
+    padding: 10px;
+    vertical-align: middle;
+    margin-bottom: 20px;
+
+    @media screen and (min-width: 430px) {
+      font-size: 14px;
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+  }
+
+  &-heading {
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+
+    @media screen and (min-width: 430px) {
+      font-size: 48px;
+      margin: 0 0 20px 0;
+    }
+  }
+
+  &-paragraph {
+    font-size: 14px;
+    color: var(--darkGray);
+    margin: 0;
+
+    @at-root .green & {
+      color: var(--primaryGreen);
+    }
+
+    @media screen and (min-width: 430px) {
+      font-size: 18px;
+    }
+  }
+}

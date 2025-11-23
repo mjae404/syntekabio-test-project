@@ -1,0 +1,42 @@
+.blind {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+.container {
+  max-width: 892px;
+  width: 100%;
+  padding: 80px 15px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @media screen and (min-width: 430px) {
+    padding: 100px 15px;
+  }
+
+  @media screen and (min-width: 992px) {
+    padding: 150px 0;
+  }
+}
+
+.pc-image {
+  display: block !important;
+  height: auto;
+
+  @media screen and (max-width: 430px) {
+    display: none !important;
+  }
+}
+
+.mobile-image {
+  display: none !important;
+  height: auto;
+
+  @media screen and (max-width: 430px) {
+    display: block !important;
+  }
+}

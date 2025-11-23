@@ -1,0 +1,81 @@
+.card-swiper {
+  &-slide {
+    border-radius: 20px;
+    border: 1px solid var(--white);
+    box-sizing: border-box;
+    overflow: hidden;
+    text-align: center;
+    height: auto;
+    background-color: var(--white);
+
+    @media screen and (min-width: 430px) {
+      border-radius: 30px;
+    }
+  }
+
+  &-thumbnail {
+    position: relative;
+    padding-top: 100%;
+    overflow: hidden;
+
+    &-image {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      height: 100% !important;
+      object-fit: cover;
+    }
+  }
+
+  &-text {
+    padding: 18px;
+    box-sizing: border-box;
+
+    @media screen and (min-width: 430px) {
+      padding: 35px 30px;
+    }
+  }
+
+  &-title {
+    color: var(--primaryGreen);
+    display: block;
+    margin-bottom: 4px;
+    font-size: 15px;
+
+    @media screen and (min-width: 430px) {
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+  }
+
+  &-description {
+    color: var(--darkGray);
+    font-size: 14px;
+    margin: 0;
+    
+    @media screen and (min-width: 430px) {
+      font-size: 18px;
+    }
+  }
+
+  :global(.swiper-pagination) {
+    margin-top: 40px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+  }
+
+  :global(.swiper-pagination-bullet) {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--primaryGreen);
+    border-radius: 100%;
+    cursor: pointer;
+  }
+
+  :global(.swiper-pagination-bullet-active) {
+    background-color: var(--primaryGreen);
+  }
+}
