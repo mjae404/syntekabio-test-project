@@ -1,3 +1,5 @@
+@use "@/styles/common/mixin" as *;
+
 .tab {
   &-list {
     list-style: none;
@@ -42,9 +44,7 @@
         width: 100%;
         height: 5px;
         background-color: var(--primaryGreen);
-        position: absolute;
-        left: 0;
-        bottom: -1px;
+        @include position(absolute, null, null, -1px, 0);
         z-index: 1;
         content: '';
       }
