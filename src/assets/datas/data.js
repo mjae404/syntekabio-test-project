@@ -32,8 +32,8 @@ const videoData = {
   heading: '테스트용 영상 단락',
   paragraph: '면접 과제용으로 제작된 샘플 영상 단락입니다.',
   video: './video/main.mp4',
-  videoCover: videoPoster,
-}
+  videoCover: videoPoster.src,
+};
 
 const tabData = {
   heading: '테스트용 탭 영역 단락 입니다',

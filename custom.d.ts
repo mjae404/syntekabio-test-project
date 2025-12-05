@@ -11,7 +11,12 @@ declare module '*.svg' {
 }
 
 declare module '*.png' {
-  const value: string;
+  const value: {
+    src: string; // 🔥 실제 구조 반영
+    height: number;
+    width: number;
+    blurDataURL?: string;
+  };
   export default value;
 }
 
