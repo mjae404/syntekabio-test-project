@@ -9,12 +9,12 @@ type TabContainerProps = {
   tabMenu?: TabItem[];
 };
 
-const TabContainer: React.FC<TabContainerProps> = ({ heading, paragraph, tabMenu }) => {
+const TabContainer: React.FC<TabContainerProps> = ({ heading, paragraph, tabMenu = [] }) => {
   return (
     <div className="container">
       <SubTitle heading={heading} paragraph={paragraph} />
       <div className={styles['tab-container']}>
-        <Tab items={tabMenu ?? []} />
+        <Tab items={tabMenu} />
       </div>
     </div>
   );
